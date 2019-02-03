@@ -1,0 +1,18 @@
+title = "Home"
+url = "/"
+layout = "default"
+is_hidden = 0
+
+[builderDetails]
+modelClass = "Abhinay\Posts\Models\Post"
+identifierValue = "{{ :id }}"
+modelKeyColumn = "title"
+displayColumn = "title"
+notFoundMessage = "Record not found"
+==
+<div class="jumbtorn">
+    <h1>This is the homepage</h1>
+    <p>Some page content</p>
+</div>
+{% partial 'links' %}
+<hr>{% component 'builderDetails' %}

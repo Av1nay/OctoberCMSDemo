@@ -1,0 +1,10 @@
+name: Roadmaps
+form: $/abhinay/roadmap/models/roadmap/fields.yaml
+modelClass: Abhinay\Roadmap\Models\Roadmap
+defaultRedirect: abhinay/roadmap/roadmaps
+create:
+    redirect: 'abhinay/roadmap/roadmaps/update/:id'
+    redirectClose: abhinay/roadmap/roadmaps
+update:
+    redirect: abhinay/roadmap/roadmaps
+    redirectClose: abhinay/roadmap/roadmaps

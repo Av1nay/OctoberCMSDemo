@@ -1,0 +1,4 @@
+title: Roadmaps
+modelClass: Abhinay\Roadmap\Models\Roadmap
+toolbar:
+    buttons: reorder_toolbar

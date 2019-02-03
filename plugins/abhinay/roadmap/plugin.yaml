@@ -1,0 +1,11 @@
+plugin:
+    name: abhinay.roadmaps
+    description: 'abhinay.roadmap::lang.plugin.description'
+    author: abhinay
+    icon: oc-icon-road
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Roadmap
+        url: abhinay/roadmap/roadmaps
+        icon: icon-road

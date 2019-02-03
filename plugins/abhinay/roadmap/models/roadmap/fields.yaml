@@ -1,0 +1,24 @@
+fields:
+    title:
+        label: title
+        span: full
+        placeholder: 'title goes here.....'
+        required: 1
+        type: text
+    description:
+        label: description
+        size: tiny
+        span: full
+        placeholder: 'description goes here...'
+        type: richeditor
+    month:
+        label: month
+        oc.commentPosition: above
+        span: left
+        placeholder: month
+        type: text
+    year:
+        label: year
+        span: right
+        placeholder: year
+        type: text

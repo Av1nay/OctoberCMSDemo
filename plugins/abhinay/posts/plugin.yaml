@@ -1,0 +1,11 @@
+plugin:
+    name: 'abhinay.posts::lang.plugin.name'
+    description: 'abhinay.posts::lang.plugin.description'
+    author: abhinay
+    icon: oc-icon-pencil
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: posts
+        url: /
+        icon: icon-pencil-square-o

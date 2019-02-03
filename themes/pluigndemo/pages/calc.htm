@@ -1,0 +1,44 @@
+title = "calc.htm"
+url = "/calc"
+layout = "basic"
+description = "a simple calculator using AJAX"
+is_hidden = 0
+==
+<?php
+function onTest(){
+        $value1 = post('value1');
+        $value2 = post('value2');
+        $operation = post('operation');
+        switch($operation){
+            case '+' :
+                $this['answer'] = $value1 + $value2;
+                break;
+            case '-' :
+                $this['answer'] = $value1 - $value2;
+                break;
+            case '*' :
+                $this['answer'] = $value1 * $value2;
+                break;
+            case '/' :
+                $this['answer'] = $value1 / $value2;
+                break;
+        }
+    }
+?>
+==
+<h3>Calculator</h3>
+<form action="form-inline" data-request="onTest" data-request-update="calcresult: '#result'">
+    <input type="text" name="value1" value="" class="form-control" style="width:100px">
+    <select name="operation" class="form-control" style="width:70px">
+        <option value="">+</option>
+        <option value="">-</option>
+        <option value="">*</option>
+        <option value="">/</option>
+    </select>
+    <input type="text" name="value2" value="" class="form-control" style="width:100px">
+    <button type="submit" class="btn btn-primary">Go</button>
+</form>
+<h3>Result <small>The calcresult partial</small></h3>
+<div id="result">
+    {% partial "calcresult" %}
+</div>

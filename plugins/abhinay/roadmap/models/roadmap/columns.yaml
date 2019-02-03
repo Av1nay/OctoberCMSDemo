@@ -1,0 +1,18 @@
+columns:
+    title:
+        label: Title
+        type: text
+        searchable: true
+    description:
+        label: Descrption
+        type: text
+    month:
+        label: Month
+        type: number
+        searchable: true
+        sortable: true
+    year:
+        label: Year
+        type: number
+        searchable: true
+        sortable: true
