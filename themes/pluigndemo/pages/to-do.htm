@@ -5,25 +5,7 @@ is_hidden = 0
 
 [demoTodo]
 max = 5
-
-[builderDetails]
-modelClass = "Abhinay\Posts\Models\Post"
-identifierValue = "{{ :id }}"
-modelKeyColumn = "title"
-displayColumn = "title"
-notFoundMessage = "Record not found"
-
-[builderList]
-modelClass = "Abhinay\Posts\Models\Post"
-scope = "-"
-scopeValue = "{{ :scope }}"
-displayColumn = "titile"
-noRecordsMessage = "No records found"
-detailsPage = "-"
-detailsUrlParameter = "id"
-pageNumber = "{{ :page }}"
 ==
 {% component 'demoTodo' %}
-<hr>{% component 'builderDetails' %}
 <hr>
-{% component 'builderList' %}
+<hr>

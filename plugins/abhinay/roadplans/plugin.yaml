@@ -1,6 +1,0 @@
-plugin:
-    name: 'abhinay.roadplans::lang.plugin.name'
-    description: 'abhinay.roadplans::lang.plugin.description'
-    author: abhinay
-    icon: oc-icon-align-justify
-    homepage: ''

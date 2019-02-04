@@ -2,16 +2,6 @@ title = "Roadmap_plan"
 url = "/roadmapplan"
 layout = "default"
 is_hidden = 0
-
-[builderList]
-modelClass = "Abhinay\Roadmap\Models\Roadmap"
-scope = "-"
-scopeValue = "{{ :scope }}"
-displayColumn = "title"
-noRecordsMessage = "No records found"
-detailsPage = "-"
-detailsUrlParameter = "id"
-pageNumber = "{{ :page }}"
 ==
 {% set records = builderList.records %}
 {% set displayColumn = builderList.displayColumn %}
@@ -43,7 +33,7 @@ pageNumber = "{{ :page }}"
                 - {{ record.year}}
             </li>
         {% else %}
-            <li class="no-data">{{ noRecordsMessage }}</li>
+            <li class="no-data">This is test.{{ noRecordsMessage }}</li>
         {% endfor %}
     </ul>
     

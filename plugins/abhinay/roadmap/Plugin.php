@@ -6,6 +6,9 @@ class Plugin extends PluginBase
 {
     public function registerComponents()
     {
+        return [
+            'Abhinay\Roadmap\Components\Roadmaps' => 'roadMaps'
+        ];
     }
 
     public function registerSettings()

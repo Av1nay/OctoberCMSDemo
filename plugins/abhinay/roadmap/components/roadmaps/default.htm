@@ -1,0 +1,6 @@
+{% set maps = __SELF__.roadmaps %}
+<ul>
+    {% for map in maps %}
+    <li>{{ map.title }}</li>
+    {% endfor %}
+</ul>

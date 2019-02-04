@@ -20,7 +20,7 @@ class Todo extends ComponentBase
             'max' => [
                 'description'       => 'The most amount of todo items allowed',
                 'title'             => 'Max items',
-                'default'           => 10,
+                'default'           => 5,
                 'type'              => 'string',
                 'validationPattern' => '^[0-9]+$',
                 'validationMessage' => 'The Max Items value is required and should be integer.'
