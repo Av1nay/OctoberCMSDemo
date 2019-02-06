@@ -1,0 +1,14 @@
+list: $/abhinay/blog/models/post/columns.yaml
+modelClass: Abhinay\Blog\Models\Post
+title: 'Manage Posts'
+recordUrl: 'abhinay/blog/posts/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
+showPageNumbers: true
+showSetup: true
+showSorting: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

@@ -1,8 +1,10 @@
-<?php namespace Abhinay\Roadmap\Components;
+<?php 
+
+namespace Abhinay\Roadmap\Components;
 
 use Cms\Classes\ComponentBase;
 
-use Abhinay\Roadmap\Models;
+use Abhinay\Roadmap\Models\RoadMap;
 
 
 class Roadmaps extends ComponentBase
@@ -24,9 +26,12 @@ class Roadmaps extends ComponentBase
     
 
     public function onRun(){
-        $this->roadMaps = $this._loadRoadMaps();
+        $this->roadMaps = $this->_loadRoadMaps();
     }
-//load roadmaps from database
+
+    /**
+     * load roadmaps from database
+     */
     protected function _loadRoadMaps(){
         return Roadmap::all();
     }

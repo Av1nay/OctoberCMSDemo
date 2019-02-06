@@ -1,0 +1,10 @@
+fields:
+    fname:
+        label: Firstname
+        span: left
+        disabled: true
+        type: text
+    lname:
+        label: Lastname
+        span: auto
+        type: text

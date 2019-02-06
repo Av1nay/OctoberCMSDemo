@@ -1,0 +1,19 @@
+1.0.1: 'First version of Blog'
+1.0.2:
+    - 'Updated table abhinay_blog_posts'
+    - builder_table_update_abhinay_blog_posts.php
+1.0.3:
+    - 'Updated table abhinay_blog_users'
+    - builder_table_update_abhinay_blog_users.php
+1.0.4:
+    - 'Updated table abhinay_blog_posts'
+    - builder_table_update_abhinay_blog_posts_2.php
+1.0.5:
+    - 'Updated table abhinay_blog_posts'
+    - builder_table_update_abhinay_blog_posts_3.php
+1.0.6:
+    - 'Updated table abhinay_blog_users'
+    - builder_table_update_abhinay_blog_users_2.php
+1.0.7:
+    - 'Updated table abhinay_blog_users'
+    - builder_table_update_abhinay_blog_users_3.php

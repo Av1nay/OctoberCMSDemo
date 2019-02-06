@@ -1,0 +1,11 @@
+fields:
+    title:
+        label: Title
+        span: full
+        placeholder: 'Posts Title'
+        type: text
+    description:
+        label: Description
+        span: full
+        size: huge
+        type: richeditor

@@ -1,9 +1,13 @@
 columns:
+    id:
+        label: ID
+        type: number
+        searchable: true
     title:
-        label: title
+        label: Title
         type: text
     description:
-        label: description
+        label: Description
         type: text
     created_at:
         label: created_at
@@ -11,6 +15,6 @@ columns:
     updated_at:
         label: updated_at
         type: datetime
-    deleted_at:
-        label: deleted_at
-        type: datetime
+    user_id:
+        label:  User_Id
+        type: number

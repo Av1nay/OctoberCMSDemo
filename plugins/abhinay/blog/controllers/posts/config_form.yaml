@@ -1,0 +1,14 @@
+name: Post
+modelClass: Abhinay\Blog\Models\Post
+form: $/abhinay/blog/models/post/fields.yaml
+defaultRedirect: abhinay/blog/posts
+create:
+    title: 'Create Post'
+    redirect: 'abhinay/blog/posts/update/:id'
+    redirectClose: abhinay/blog/posts
+update:
+    title: 'Edit Post'
+    redirect: abhinay/blog/posts
+    redirectClose: abhinay/blog/posts
+preview:
+    title: 'Preview Post'
