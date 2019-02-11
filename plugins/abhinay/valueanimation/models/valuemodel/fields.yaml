@@ -1,0 +1,9 @@
+fields:
+    title:
+        label: Titile
+        span: full
+        type: text
+    subtitle:
+        label: Subtitle
+        span: full
+        type: text

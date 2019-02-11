@@ -1,0 +1,4 @@
+title: ValueController
+modelClass: Abhinay\Valueanimation\Models\Valuemodel
+toolbar:
+    buttons: reorder_toolbar

@@ -6,13 +6,6 @@ columns:
     description:
         label: Descrption
         type: text
-    month:
-        label: Month
-        type: number
-        searchable: true
-        sortable: true
-    year:
-        label: Year
-        type: number
-        searchable: true
-        sortable: true
+    date:
+        label: Date
+        type: date

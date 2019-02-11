@@ -1,0 +1,12 @@
+list: $/abhinay/valueanimation/models/valuemodel/columns.yaml
+modelClass: Abhinay\Valueanimation\Models\Valuemodel
+title: ValueController
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'abhinay/valueanimation/valuecontroller/update/:id'

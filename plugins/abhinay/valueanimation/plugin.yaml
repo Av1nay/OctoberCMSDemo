@@ -1,0 +1,11 @@
+plugin:
+    name: 'abhinay.valueanimation::lang.plugin.name'
+    description: 'abhinay.valueanimation::lang.plugin.description'
+    author: abhinay
+    icon: oc-icon-bullseye
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: valueanimation
+        url: /valueanimation
+        icon: icon-life-ring

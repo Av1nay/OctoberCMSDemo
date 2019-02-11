@@ -33,6 +33,7 @@ class Roadmaps extends ComponentBase
      * load roadmaps from database
      */
     protected function _loadRoadMaps(){
-        return Roadmap::all();
+        return Roadmap::orderBy('date', 'asc')->get();
+        //return Roadmap::all();
     }
 }

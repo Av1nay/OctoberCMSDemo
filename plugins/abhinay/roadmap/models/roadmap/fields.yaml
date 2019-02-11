@@ -11,14 +11,8 @@ fields:
         span: full
         placeholder: 'description goes here...'
         type: richeditor
-    month:
-        label: month
-        oc.commentPosition: above
-        span: left
-        placeholder: month
-        type: text
-    year:
-        label: year
-        span: right
-        placeholder: year
-        type: text
+    date:
+        label: Date
+        span: auto
+        mode: date
+        type: datepicker

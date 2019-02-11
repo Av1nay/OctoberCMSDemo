@@ -1,7 +1,35 @@
-
 {% set maps = __SELF__.roadMaps %}
-<ul>
-    {% for map in maps %}
-    <li>{{ map.title }}</li>
-    {% endfor %}
-</ul>
+<section class="cd-horizontal-timeline">
+	<div class="timeline">
+		<div class="events-wrapper">
+			<div class="events">
+				<ol>
+               {% for map in maps %}
+                  <li><a href="#0" data-date="{{ map.date|date('d/m/Y')}}" class="{% if loop.first %}selected{% endif %}">{{ map.date|date('d M')}}</a></li>
+               {% endfor %} 
+				</ol>
+
+				<span class="filling-line" aria-hidden="true"></span>
+			</div> <!-- .events -->
+		</div> <!-- .events-wrapper -->
+			
+		<ul class="cd-timeline-navigation">
+			<li><a href="#0" class="prev inactive">Prev</a></li>
+			<li><a href="#0" class="next">Next</a></li>
+		</ul> <!-- .cd-timeline-navigation -->
+	</div> <!-- .timeline -->
+
+	<div class="events-content">
+		<ol>
+         {% for map in maps %}
+			<li class="{% if loop.first %}selected{% endif %}" data-date="{{ map.date|date('d/m/Y')}}">
+				<h2>{{ map.title }}</h2>
+				<em>{{ map.date|date('F d ,Y')}}</em>
+				<p>	
+					{{ map.description|striptags }}
+				</p>
+         </li>
+         {% endfor %} 
+		</ol>
+	</div> <!-- .events-content -->
+</section>

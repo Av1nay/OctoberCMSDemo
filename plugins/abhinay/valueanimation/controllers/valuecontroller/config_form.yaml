@@ -1,0 +1,10 @@
+name: ValueController
+form: $/abhinay/valueanimation/models/valuemodel/fields.yaml
+modelClass: Abhinay\Valueanimation\Models\Valuemodel
+defaultRedirect: abhinay/valueanimation/valuecontroller
+create:
+    redirect: 'abhinay/valueanimation/valuecontroller/update/:id'
+    redirectClose: abhinay/valueanimation/valuecontroller
+update:
+    redirect: abhinay/valueanimation/valuecontroller
+    redirectClose: abhinay/valueanimation/valuecontroller
