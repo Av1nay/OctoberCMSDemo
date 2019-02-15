@@ -3,16 +3,19 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>October CMS - {{ this.page.title }}</title>
         <meta name="description" content="{{ this.page.meta_description }}">
         <meta name="title" content="{{ this.page.meta_title }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="author" content="OctoberCMS">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="generator" content="OctoberCMS">
         <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
         <link href="{{ 'assets/css/vendor.css'|theme }}" rel="stylesheet">
         <link href="{{ 'assets/valueanimation/css/style.css'|theme }}" rel="stylesheet">
-        <link href="{{ 'assets/valueanimation/fonts/all.css'|theme }}" rel="stylesheet">
+        <link href="https://www.cssscript.com/wp-includes/css/sticky.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         {% styles %}
     </head>
     <body>
@@ -41,7 +44,6 @@
         <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
         <script src="{{ 'assets/vendor/bootstrap.js'|theme }}"></script>
         <script src="{{ 'assets/valueanimation/js/jquery.js'|theme }}"></script>
-        <!--<script src="{{ 'assets/valueanimation/fonts/all.js'|theme }}"></script> -->
         {% framework extras %}
         {% scripts %}
 

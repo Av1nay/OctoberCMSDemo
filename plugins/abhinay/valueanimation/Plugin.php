@@ -7,7 +7,7 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            'Abhinay\Valueanimation\Components\ValueanimationComponent' => 'ValueanimationComponents'
+            'Abhinay\Valueanimation\Components\ValueanimationComponent' => 'valuecomponents'
         ];
     }
 

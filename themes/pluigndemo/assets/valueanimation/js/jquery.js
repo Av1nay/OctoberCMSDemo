@@ -1,13 +1,13 @@
-var items = $('.circle a');
-
-
-for(var i = 0, l = items.length; i < l; i++) {
-  items[i].style.left = (50 - 35*Math.cos(-0.5 * Math.PI - 2*(1/l)*i*Math.PI)).toFixed(4) + "%";
- 
-  items[i].style.top = (50 + 35*Math.sin(-0.5 * Math.PI - 2*(1/l)*i*Math.PI)).toFixed(4) + "%";
-}
-
-$(document).ready(function() {
-  // document is loaded and DOM is ready
-  $('.circle').toggleClass('open',100);
+$(function(){
+  var i;
+  var lsize = $('.menu-item').length;
+  var angleOfRotation = 360/lsize;
+      for(i=3; i<angleOfRotation; i++){
+          $(".menu-item:nth-child("+i+")").css({
+              "transform": "rotate("+angleOfRotation*i+"deg) translateY("+250+"px) rotate(-"+angleOfRotation*i+"deg)",
+              "transition-delay": 0.5*i+"s",
+              "top":"50%",
+              "left":"50%"
+          });
+      }
 });

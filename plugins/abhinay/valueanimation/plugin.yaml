@@ -7,5 +7,5 @@ plugin:
 navigation:
     main-menu-item:
         label: valueanimation
-        url: /valueanimation
+        url: abhinay/valueanimation/valuecontroller
         icon: icon-life-ring
