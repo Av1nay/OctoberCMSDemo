@@ -1,0 +1,11 @@
+plugin:
+    name: 'abhinay.articlelist::lang.plugin.name'
+    description: 'abhinay.articlelist::lang.plugin.description'
+    author: abhinay
+    icon: oc-icon-pencil-square-o
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: articlelist
+        url: abhinay/articlelist/articles
+        icon: icon-pencil-square-o

@@ -1,0 +1,18 @@
+fields:
+    post_title:
+        label: Title
+        span: full
+        placeholder: 'Post Title'
+        disabled: 0
+        required: 1
+        type: text
+    post_body:
+        label: 'Post Body'
+        span: full
+        placeholder: 'Post description'
+        required: 1
+        type: text
+    featured_image:
+        label: 'Featured Image'
+        span: full
+        type: text
