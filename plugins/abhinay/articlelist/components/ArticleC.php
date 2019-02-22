@@ -1,5 +1,6 @@
 <?php namespace Abhinay\ArticleList\Components;
 
+use Request;
 use Cms\Classes\ComponentBase;
 
 class ArticleC extends ComponentBase
@@ -28,23 +29,15 @@ class ArticleC extends ComponentBase
                 'title' => 'Display featured image',
                 'description' => 'Do you want featured image to display in the post?',
                 'type' => 'dropdown',
-                'placeholder' => 'Select option',
-                'default' => 'Yes',
-                'options' => ['yes' => 'Yes', 'no' => 'No']
+                'default' => 'Yes'
             ],
             //image position dependency on featured image option 
-            'switchImagePositon' => [
-                'depends' => 'featuredImage',
+            'switchImagePosition' => [
                 'title' => 'Image position',
                 'description' => 'position of the image in the post',
                 'type' => 'dropdown',
-                'placeholder' => 'Choose position',
                 'default' => 'Default',
-                'options' => [
-                    'default' => 'Default',
-                    'switch' => 'Switch',
-                    'alternate' => 'Alternate'
-                    ]
+                'depends' => ['featuredImage']
                 ],
 
             //readmore text options
@@ -61,18 +54,36 @@ class ArticleC extends ComponentBase
             ]
         ];
     }
+    /**
+     * load featured image options
+     */
+    public function getFeaturedImageOptions(){
+        return [
+            'yes' => 'Yes',
+            'no' => 'No'
+        ];
+    }
 
     /**
      * load switchImagePosition depending upon the option selected in fetured image option 
      * using getPopertyOptions handler
      */
-    public function getSwitchImagePosition(){
+    public function getSwitchImagePositionOptions(){
         $featuredImageOption = Request::input('featuredImage');//load the featuredImage property value from the POST method
 
         $position = [
-
+            'yes' =>[
+                'default' => 'Default',
+                'switch' => 'Switch',
+                'alternate' => 'Alternate'
+                ],
+            'no' => 'No image' 
         ];
 
-
+        return $position[$featuredImageOption];
     }
+
+    /**
+     * load data from database after page loads
+     */
 }

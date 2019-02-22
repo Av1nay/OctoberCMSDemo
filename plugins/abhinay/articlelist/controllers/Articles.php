@@ -1,5 +1,6 @@
 <?php namespace Abhinay\ArticleList\Controllers;
 
+use Backend;
 use BackendMenu;
 use Backend\Classes\Controller;
 

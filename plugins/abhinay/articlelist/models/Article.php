@@ -32,6 +32,12 @@ class Article extends Model
     public $morphTo = [];
     public $morphOne = [];
     public $morphMany = [];
-    public $attachOne = [];
+
+    /**
+     * Realation to the the database
+     */
+    public $attachOne = [
+        'featured_images' => ['System\Models\Files']
+    ];
     public $attachMany = [];
 }

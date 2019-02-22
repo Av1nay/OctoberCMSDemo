@@ -54,7 +54,7 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-            'socket'    =>'/Applications/MAMP/tmp/mysql/mysql.sock',
+            'unix_socket'    =>'/Applications/MAMP/tmp/mysql/mysql.sock',
             'host'      => 'localhost',
             'port'      => '8889',
             'database'  => 'OctoberCMS',

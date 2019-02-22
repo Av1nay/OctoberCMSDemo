@@ -13,6 +13,13 @@ fields:
         required: 1
         type: text
     featured_image:
-        label: 'Featured Image'
-        span: full
-        type: text
+        label: 'File upload'
+        span: auto
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        imageWidth: '200'
+        imageHeight: '200'
+        type: fileupload
