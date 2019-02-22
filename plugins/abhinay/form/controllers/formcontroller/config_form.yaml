@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Form Controller
+
+# Model Form Field configuration
+form: $/abhinay/form/models/formcontroller/fields.yaml
+
+# Model Class name
+modelClass: Abhinay\Form\Models\FormController
+
+# Default redirect location
+defaultRedirect: abhinay/form/formcontroller
+
+# Create page
+create:
+    title: Create Form Controller
+    redirect: abhinay/form/formcontroller/update/:id
+    redirectClose: abhinay/form/formcontroller
+
+# Update page
+update:
+    title: Edit Form Controller
+    redirect: abhinay/form/formcontroller
+    redirectClose: abhinay/form/formcontroller
+
+# Preview page
+preview:
+    title: Preview Form Controller
