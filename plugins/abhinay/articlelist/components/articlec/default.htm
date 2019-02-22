@@ -1,1 +1,14 @@
-{{ set }}
+{% set articles = __SELF__.articles %}
+
+<div class="row">
+    {% for article in articles%}
+    <div class="col-lg-8 col-md-8 col-sm-8">
+        <h3>{{ article.post_title }}</h3>
+        {{ article.post_body|raw }}
+
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4">
+        featured_image{{ article.featured_image }}
+    </div>
+    {% endfor %}
+</div>

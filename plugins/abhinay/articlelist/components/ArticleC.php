@@ -1,10 +1,12 @@
 <?php namespace Abhinay\ArticleList\Components;
 
 use Request;
+use Abhinay\ArticleList\Models\Article;
 use Cms\Classes\ComponentBase;
 
 class ArticleC extends ComponentBase
 {
+    public $articles;
     public function componentDetails()
     {
         return [
@@ -86,4 +88,19 @@ class ArticleC extends ComponentBase
     /**
      * load data from database after page loads
      */
+    public function onRun()
+    {
+        $this->articles = $this->_loadArticle();
+    }
+
+    protected function _loadArticle()
+    {
+        /**
+         * to read data from component option input
+         */
+        if($this->property('displayPosts') > 0){
+            return Article::all()->take($this->property('displayPosts'));
+        }
+    }
+    
 }
