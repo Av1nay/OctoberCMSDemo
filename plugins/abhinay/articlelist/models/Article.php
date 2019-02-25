@@ -37,7 +37,7 @@ class Article extends Model
      * Realation to the the database
      */
     public $attachOne = [
-        'featured_images' => ['System\Models\Files']
+        'featured_image' => ['System\Models\File']
     ];
     public $attachMany = [];
 }

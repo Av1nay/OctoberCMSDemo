@@ -53,6 +53,7 @@ class Plugin extends PluginBase
 
         return [
             'Abhinay\ArticleList\Components\ArticleC' => 'articlecomponent',
+            'Abhinay\ArticleList\Components\Form' => 'featuredimage'
         ];
     }
 

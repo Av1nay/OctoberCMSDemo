@@ -24,3 +24,6 @@ columns:
     deleted_at:
         label: deleted_at
         type: datetime
+    image_path:
+        label: Image
+        type: text

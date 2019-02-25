@@ -1,0 +1,12 @@
+<form action="" method="POST" enctype="multipart/form-data">
+    <input type="text" name="post_title">
+
+    <input type="text" name="post_body">
+    <input type="hidden" name="_handler" value="onSave">
+    {{ form_token() }}
+    {{ form_sessionKey() }}
+
+    <label for="featured_image"></label>
+    <input type="file" name="featured_image">
+    <button type="submit">Save Image</button>
+</form>
