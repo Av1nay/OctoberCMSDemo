@@ -1,0 +1,14 @@
+name: Article
+modelClass: Abhinay\Articlelist\Models\Article
+form: $/abhinay/articlelist/models/article/fields.yaml
+defaultRedirect: abhinay/articlelist/articles
+create:
+    title: 'Create Article'
+    redirect: 'abhinay/articlelist/article/update/:id'
+    redirectClose: abhinay/articlelist/article
+update:
+    title: 'Edit Article'
+    redirect: abhinay/articlelist/article
+    redirectClose: abhinay/articlelist/article
+preview:
+    title: 'Preview Article'

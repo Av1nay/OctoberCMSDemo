@@ -1,0 +1,29 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    post_title:
+        label: Title
+        span: full
+        placeholder: 'Post Title'
+        disabled: 0
+        required: 1
+        type: text
+    post_body:
+        label: 'Post Body'
+        span: full
+        placeholder: 'Post description'
+        required: 1
+        type: text
+    featured_image:
+        label: 'File upload'
+        span: auto
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        imageWidth: '200'
+        imageHeight: '200'
+        type: fileupload

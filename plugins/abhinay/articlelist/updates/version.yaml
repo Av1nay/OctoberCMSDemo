@@ -1,0 +1,4 @@
+1.0.1: 'First version of articlelist'
+1.0.2:
+    - 'Updated table abhinay_articlelist_articles'
+    - builder_table_update_abhinay_articlelist_articles.php
