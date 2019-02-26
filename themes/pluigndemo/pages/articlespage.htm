@@ -1,0 +1,16 @@
+title = "articlespage"
+url = "/articlespage"
+layout = "default"
+description = "This is the front-end for articles"
+is_hidden = 0
+
+[articlecomponent]
+displayPosts = 15
+featuredImage = "yes"
+switchImagePosition = "default"
+readmoreTextOption = "readmore"
+
+[featuredimage]
+==
+{% component 'featuredimage' %}
+{% component 'articlecomponent' %}
