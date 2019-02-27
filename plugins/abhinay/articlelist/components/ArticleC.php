@@ -33,14 +33,24 @@ class ArticleC extends ComponentBase
                 'type' => 'dropdown',
                 'default' => 'Yes'
             ],
-            //image position dependency on featured image option 
-            'switchImagePosition' => [
-                'title' => 'Image position',
+            //image orientation dependency on featured image option 
+            'imageOrientation' => [
+                'title' => 'Image Orientation',
                 'description' => 'position of the image in the post',
                 'type' => 'dropdown',
-                'default' => 'Default',
+                'default' => 'Right',
                 'depends' => ['featuredImage']
                 ],
+
+            //image orientation for alternate positions
+            'imagePosition' => [
+                'title' => 'Image Position',
+                'description' => 'position of image for alternate orientation',
+                'default' => 'Right',
+                'type' => 'dropdown',
+                'depends' => ['imageOrientation']
+                
+            ],
             //readmore text options
             'readmoreTextOption' => [
                 'title' => 'readmore options',
@@ -68,19 +78,35 @@ class ArticleC extends ComponentBase
      * load switchImagePosition depending upon the option selected in fetured image option 
      * using getPopertyOptions handler
      */
-    public function getSwitchImagePositionOptions(){
+    public function getImageOrientationOptions(){
         //load the featuredImage property value from the POST method
         $featuredImageOption = Request::input('featuredImage');
-        $position = [
+        $orientation = [
             'yes' =>[
-                'default' => 'Default',
-                'switch' => 'Switch',
+                'right' => 'Right',
+                'left' => 'Left',
                 'alternate' => 'Alternate'
                 ],
             'no' => 'No image' 
         ];
-        return $position[$featuredImageOption];
+        return $orientation[$featuredImageOption];
     }
+    /**
+     * get image positions according to the orientation
+     */
+
+     public function getImagePositionOptions(){
+         $imageOrientationOption = Request::input('imageOrientation');
+         $imagePosition = [
+                'right' => 'Right',
+                'left' => 'Left',
+                'alternate' => [
+                    'right' => 'Right',
+                     'left' => 'Left'
+                    ]
+         ];
+         return $imagePosition[$imageOrientationOption];
+     }
     /**
      * load data from database after page loads
      */

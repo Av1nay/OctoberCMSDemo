@@ -1,13 +1,14 @@
 title = "articlespage"
 url = "/articlespage"
-layout = "default"
+layout = "article"
 description = "This is the front-end for articles"
 is_hidden = 0
 
 [articlecomponent]
-displayPosts = 5
+displayPosts = 10
 featuredImage = "yes"
-switchImagePosition = "alternate"
+imageOrientation = "alternate"
+imagePosition = "left"
 readmoreTextOption = "readmore"
 ==
 {% component 'articlecomponent' %}

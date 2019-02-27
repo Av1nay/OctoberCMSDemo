@@ -1,13 +1,14 @@
 {% set articles = __SELF__.articles %}
-<div class="row">
-    {% for article in articles%}
-    <div class="col-lg-8 col-md-8 col-sm-8">
-        <h3>{{ article.post_title }}</h3>
-        {{ article.post_body|raw }}
 
-    </div>
-    <div class="col-lg-4 col-md-4 col-sm-4">
-        <img src="{{ article.featured_image.getPath() }}" alt="">
+    {% for article in articles%}
+    <div class="row m-b-md">
+        <div id="bodySection" class="col-lg-8 col-md-8 col-sm-8">
+            <h3>{{ article.post_title }}</h3>
+            {{ article.post_body|raw }}
+
+        </div>
+        <div id="imageSection" class="col-lg-4 col-md-4 col-sm-4">
+            <img src="{{ article.featured_image.getPath() }}"  alt="" style="height: 250px; width: 200px;">
+        </div>
     </div>
     {% endfor %}
-</div>

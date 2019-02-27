@@ -11,11 +11,6 @@ class CreateArticlesTable extends Migration
         Schema::create('abhinay_articlelist_articles', function(Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('post_title');
-            $table->string('post_body');
-            $table->timestamps('created_at');
-            $table->timestamps('updated_at');
-            $table->timestamps('deleted_at');
         });
     }
 
