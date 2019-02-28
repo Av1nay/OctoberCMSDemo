@@ -1,6 +1,7 @@
 <?php namespace Abhinay\Articlelist;
 
 use Backend;
+use Event;
 use System\Classes\PluginBase;
 
 /**
@@ -40,7 +41,6 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
-
     }
 
     /**

@@ -1,5 +1,5 @@
 <?php namespace Abhinay\Articlelist\Components;
-
+use Event;
 use Request;
 use Abhinay\Articlelist\Models\Article;
 use Cms\Classes\ComponentBase;
@@ -8,6 +8,7 @@ use System\Models\File;
 class ArticleC extends ComponentBase
 {
     public $articles;
+    public $properties;
     public function componentDetails()
     {
         return [
@@ -42,26 +43,12 @@ class ArticleC extends ComponentBase
                 'depends' => ['featuredImage']
                 ],
 
-            //image orientation for alternate positions
-            'imagePosition' => [
-                'title' => 'Image Position',
-                'description' => 'position of image for alternate orientation',
-                'default' => 'Right',
-                'type' => 'dropdown',
-                'depends' => ['imageOrientation']
-                
-            ],
             //readmore text options
             'readmoreTextOption' => [
                 'title' => 'readmore options',
                 'description' => 'readmore text option at the end of excerpt',
                 'default' => 'readmore',
-                'type' => 'dropdown',
-                'placeholder' => 'select option',
-                'options' => [
-                    'readmore' => 'readmore >>>',
-                    'continue' => 'continue reading...'
-                ]
+                'type' => 'string'
             ]
         ];
     }
@@ -71,7 +58,7 @@ class ArticleC extends ComponentBase
     public function getFeaturedImageOptions(){
         return [
             'yes' => 'Yes',
-            'no' => 'No'
+            'no' => 'No image'
         ];
     }
     /**
@@ -81,39 +68,27 @@ class ArticleC extends ComponentBase
     public function getImageOrientationOptions(){
         //load the featuredImage property value from the POST method
         $featuredImageOption = Request::input('featuredImage');
-        $orientation = [
-            'yes' =>[
+        if($featuredImageOption == 'yes'){
+            return [
                 'right' => 'Right',
                 'left' => 'Left',
-                'alternate' => 'Alternate'
-                ],
-            'no' => 'No image' 
-        ];
-        return $orientation[$featuredImageOption];
+                'alt_right' => 'Alternate Right',
+                'alt_left' => 'Alternate Left'
+            ];
+        }
+        else{
+            return ['no' => 'No image'];
+        }
     }
-    /**
-     * get image positions according to the orientation
-     */
-
-     public function getImagePositionOptions(){
-         $imageOrientationOption = Request::input('imageOrientation');
-         $imagePosition = [
-                'right' => 'Right',
-                'left' => 'Left',
-                'alternate' => [
-                    'right' => 'Right',
-                     'left' => 'Left'
-                    ]
-         ];
-         return $imagePosition[$imageOrientationOption];
-     }
     /**
      * load data from database after page loads
      */
     public function onRun()
     {
         $this->articles = $this->_loadArticle();
+
     }
+
     protected function _loadArticle()
     {
         /**
