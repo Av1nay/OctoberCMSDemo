@@ -1,32 +1,65 @@
 {% set articles = __SELF__.articles %}
 {% set properties = __SELF__.properties %}
-
-
-
-<script type="text/javascript">
-    var articles = '{{ articles }}'
-    var getfeaturedImage = '{{ properties["featuredImage"] }}'
-    var getImageOrientation = '{{ properties["imageOrientation"] }}'
-</script>
+{% set col_8 = "col-lg-8 col-md-8 col-sm-8" %}
+{% set col_12 = "col-lg-12 col-md-12 col-sm-12" %}
+{% set col_4 = "col-lg-4 col-md-4 col-sm-4" %}
 
 
 <div id="getFeaturedImage"></div>
+
 {% for article in articles%}
+
 <div class="row m-b-md">
-
-    <div id="bodySection" class="{% if properties['featuredImage'] == 'yes'%}
-            col-lg-8 col-md-8 col-sm-8
-
+    <div id="bodySection" class=" 
+        {% if properties['featuredImage'] == 'yes'%}
+            {{ col_8 }}
+            {% if properties['imageOrientation'] == 'left' %}
+                pull-right
+            {% elseif properties['imageOrientation'] == 'right' %}
+                pull-left
+            {% elseif properties['imageOrientation'] == 'alt_right' %}
+                {% if loop.index is odd %}
+                    pull-left
+                {% else %}
+                    pull-right
+                {% endif %}
+            {% else %}
+                {% if loop.index is odd %}
+                    pull-right
+                {% else %}
+                    pull-left
+                {% endif %}
+            {% endif %}
         {% else %}
-            col-lg-12 col-md-12 col-sm-12
-        {% endif %}">
+            {{ col_12 }}
+        {% endif %}
+    ">
         <h3>{{ article.post_title }}</h3>
         {{ article.post_body|raw }}
-
+        {{ (article.post_body|raw)|length }}
     </div>
     {% if properties['featuredImage'] == 'yes'%}
-    <div id="imageSection" class="col-lg-4 col-md-4 col-sm-4">
-        <img src="{{ article.featured_image.getPath() }}" alt="" style="height: 250px; width: 200px;">
+    <div id="imageSection" class="
+            {{ col_4 }}
+        {%if properties['imageOrientation'] == 'left'%}
+            pull-left
+        {% elseif properties['imageOrientation'] == 'right'%}
+            pull-right
+        {% elseif properties['imageOrientation'] == 'alt_right' %}
+            {% if loop.index is odd %}
+                pull-right
+            {% else%}
+                pull-left
+            {% endif %}
+        {% else %}
+            {% if loop.index is odd %}
+                pull-left
+            {% else %}
+                pull-right
+            {% endif %}
+        {% endif %}
+    ">
+        <img src="{{ article.featured_image.getPath() }}" alt="">
     </div>
     {% endif %}
 </div>

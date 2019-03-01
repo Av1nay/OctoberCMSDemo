@@ -1,0 +1,6 @@
+#imageSection > img{
+    display: block;
+    margin: auto;
+    height: 250px;
+    width: 200px;
+}

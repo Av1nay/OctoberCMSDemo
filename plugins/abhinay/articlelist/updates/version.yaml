@@ -5,3 +5,9 @@
 1.0.3:
     - 'Created table abhinay_articlelist_articles'
     - builder_table_create_abhinay_articlelist_articles.php
+1.0.4:
+    - 'Updated table abhinay_articlelist_articles'
+    - builder_table_update_abhinay_articlelist_articles.php
+1.0.5:
+    - 'Updated table abhinay_articlelist_articles'
+    - builder_table_update_abhinay_articlelist_articles_2.php
