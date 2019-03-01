@@ -10,55 +10,59 @@
 {% for article in articles%}
 
 <div class="row m-b-md">
-    <div id="bodySection" class=" 
-        {% if properties['featuredImage'] == 'yes'%}
-            {{ col_8 }}
-            {% if properties['imageOrientation'] == 'left' %}
-                pull-right
-            {% elseif properties['imageOrientation'] == 'right' %}
-                pull-left
-            {% elseif properties['imageOrientation'] == 'alt_right' %}
-                {% if loop.index is odd %}
-                    pull-left
-                {% else %}
+    <div id="bodySection" 
+        class=" 
+            {% if properties['featuredImage'] == 'yes'%}
+                {{ col_8 }}
+                {% if properties['imageOrientation'] == 'left' %}
                     pull-right
+                {% elseif properties['imageOrientation'] == 'right' %}
+                    pull-left
+                {% elseif properties['imageOrientation'] == 'alt_right' %}
+                    {% if loop.index is odd %}
+                        pull-left
+                    {% else %}
+                        pull-right
+                    {% endif %}
+                {% else %}
+                    {% if loop.index is odd %}
+                        pull-right
+                    {% else %}
+                        pull-left
+                    {% endif %}
                 {% endif %}
             {% else %}
-                {% if loop.index is odd %}
-                    pull-right
-                {% else %}
-                    pull-left
-                {% endif %}
+                {{ col_12 }}
             {% endif %}
-        {% else %}
-            {{ col_12 }}
-        {% endif %}
-    ">
+        "
+    >
         <h3>{{ article.post_title }}</h3>
         {{ article.post_body|raw }}
         {{ (article.post_body|raw)|length }}
     </div>
     {% if properties['featuredImage'] == 'yes'%}
-    <div id="imageSection" class="
-            {{ col_4 }}
-        {%if properties['imageOrientation'] == 'left'%}
-            pull-left
-        {% elseif properties['imageOrientation'] == 'right'%}
-            pull-right
-        {% elseif properties['imageOrientation'] == 'alt_right' %}
-            {% if loop.index is odd %}
+    <div id="imageSection" 
+        class="
+                {{ col_4 }}
+            {%if properties['imageOrientation'] == 'left'%}
+                pull-left
+            {% elseif properties['imageOrientation'] == 'right'%}
                 pull-right
-            {% else%}
-                pull-left
-            {% endif %}
-        {% else %}
-            {% if loop.index is odd %}
-                pull-left
+            {% elseif properties['imageOrientation'] == 'alt_right' %}
+                {% if loop.index is odd %}
+                    pull-right
+                {% else%}
+                    pull-left
+                {% endif %}
             {% else %}
-                pull-right
+                {% if loop.index is odd %}
+                    pull-left
+                {% else %}
+                    pull-right
+                {% endif %}
             {% endif %}
-        {% endif %}
-    ">
+        "
+    >
         <img src="{{ article.featured_image.getPath() }}" alt="">
     </div>
     {% endif %}
