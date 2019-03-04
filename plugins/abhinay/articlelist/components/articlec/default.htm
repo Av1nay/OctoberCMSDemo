@@ -3,42 +3,37 @@
 {% set col_8 = "col-lg-8 col-md-8 col-sm-8" %}
 {% set col_12 = "col-lg-12 col-md-12 col-sm-12" %}
 {% set col_4 = "col-lg-4 col-md-4 col-sm-4" %}
-
-
-<div id="getFeaturedImage"></div>
-
 {% for article in articles%}
 
 <div class="row m-b-md">
     <div id="bodySection" 
         class=" 
-            {% if properties['featuredImage'] == 'yes'%}
-                {{ col_8 }}
-                {% if properties['imageOrientation'] == 'left' %}
-                    pull-right
-                {% elseif properties['imageOrientation'] == 'right' %}
+        {% if properties['featuredImage'] == 'yes'%}
+            {{ col_8 }}
+            {% if properties['imageOrientation'] == 'left' %}
+                pull-right
+            {% elseif properties['imageOrientation'] == 'right' %}
+                pull-left
+            {% elseif properties['imageOrientation'] == 'alt_right' %}
+                {% if loop.index is odd %}
                     pull-left
-                {% elseif properties['imageOrientation'] == 'alt_right' %}
-                    {% if loop.index is odd %}
-                        pull-left
-                    {% else %}
-                        pull-right
-                    {% endif %}
                 {% else %}
-                    {% if loop.index is odd %}
-                        pull-right
-                    {% else %}
-                        pull-left
-                    {% endif %}
+                    pull-right
                 {% endif %}
             {% else %}
-                {{ col_12 }}
+                {% if loop.index is odd %}
+                    pull-right
+                {% else %}
+                    pull-left
+                {% endif %}
             {% endif %}
+        {% else %}
+            {{ col_12 }}
+        {% endif %}
         "
     >
         <h3>{{ article.post_title }}</h3>
-        {{ article.post_body|raw }}
-        {{ (article.post_body|raw)|length }}
+        {{ (article.post_body|raw)[:255] }}<a href="#">{{ properties.readmoreTextOption }}</a>
     </div>
     {% if properties['featuredImage'] == 'yes'%}
     <div id="imageSection" 

@@ -1,7 +1,6 @@
 <?php namespace Abhinay\Articlelist;
 
 use Backend;
-use Event;
 use System\Classes\PluginBase;
 
 /**
